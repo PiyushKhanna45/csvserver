@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.3" #docker-compose version 1.23.2, build 1110ad01
 services:
   csvserver:
     environment:
