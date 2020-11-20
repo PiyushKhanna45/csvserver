@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  csvserver:
+    environment:
+      - CSVSERVER_BORDER=Orange
+    volumes:
+      - ./inputFile:/csvserver/inputdata
+      - ./gencsv.sh:/csvserver/gencsv.sh
+    ports:
+      - "9393:9300"
+    image: "docker-registry-proxy.corp.amdocs.com/infracloudio/csvserver"
+  prometheus:
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    image: "prom/prometheus"
