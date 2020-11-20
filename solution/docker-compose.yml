@@ -8,7 +8,7 @@ services:
       - ./gencsv.sh:/csvserver/gencsv.sh
     ports:
       - "9393:9300"
-    image: "docker-registry-proxy.corp.amdocs.com/infracloudio/csvserver"
+    image: "infracloudio/csvserver:latest"
   prometheus:
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
